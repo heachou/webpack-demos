@@ -1,12 +1,10 @@
+const postcssNormalize = require('postcss-normalize')
+
 const rules = [
   {
     test: /\.(js|jsx)$/,
     exclude: /node_modules/,
     loader: 'babel-loader',
-  },
-  {
-    test: /\.css$/,
-    loader: ['style-loader', 'css-loader'],
   },
   {
     test: /\.(png|jpe?g|gif)$/i,
@@ -18,7 +16,7 @@ const rules = [
     },
   },
   {
-    test: /\.less$/,
+    test: /\.(less|css)$/,
     exclude: [/node_modules/],
     use: [
       {
@@ -34,7 +32,7 @@ const rules = [
             strictMath: true,
           },
         },
-      },
+      }
     ],
   },
 ]

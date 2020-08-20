@@ -6,7 +6,7 @@ const rules = require('./rules')
 module.exports = {
   mode: 'development',
   entry: {
-    index: path.resolve(__dirname, '../src/index.js'),
+    index: path.resolve(__dirname, '../src/index.tsx'),
   },
   output: {
     filename: 'bundle.js',
@@ -14,6 +14,9 @@ module.exports = {
   },
   module: {
     rules,
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
   },
   devServer: {
     hot: true,
@@ -30,4 +33,5 @@ module.exports = {
       template: path.join(__dirname, '../index.html'),
     }),
   ],
+  devtool: 'inline-source-map'
 }

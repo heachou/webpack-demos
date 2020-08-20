@@ -3,7 +3,7 @@ const autoprefixer = require('autoprefixer')
 
 const rules = [
   {
-    test: /\.(js|jsx)$/,
+    test: /\.(ts|tsx|js|jsx)$/,
     exclude: /node_modules/,
     loader: 'babel-loader',
   },
@@ -32,15 +32,7 @@ const rules = [
           ident: 'postcss',
           plugins: () => [
             require('postcss-flexbugs-fixes'),
-            autoprefixer({
-              browsers: [
-                '>1%',
-                'last 4 versions',
-                'Firefox ESR',
-                'not ie < 9', // React doesn't support IE8 anyway
-              ],
-              flexbox: 'no-2009',
-            }),
+            autoprefixer()
           ],
         },
       },
@@ -51,7 +43,7 @@ const rules = [
             strictMath: true,
           },
         },
-      }
+      },
     ],
   },
 ]

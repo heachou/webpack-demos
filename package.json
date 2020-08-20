@@ -13,8 +13,17 @@
     "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/classnames": "^2.2.10",
+    "@types/node": "^14.6.0",
+    "@types/react": "^16.9.46",
+    "@types/react-dom": "^16.9.8",
+    "@types/webpack-env": "^1.15.2",
+    "autoprefixer": "^9.8.6",
     "babel-loader": "^8.1.0",
+    "classnames": "^2.2.6",
     "css-loader": "^4.2.1",
+    "eslint": "^7.7.0",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
     "less": "^3.12.2",
@@ -43,5 +52,8 @@
       "last 10 firefox version",
       "last 10 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "^4.1.0"
   }
 }

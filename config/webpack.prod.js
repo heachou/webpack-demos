@@ -1,14 +1,7 @@
 const path = require('path')
 const HtmlPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
-
-const rules = [
-  {
-    test: /\.(js|jsx)$/,
-    exclude: /node_modules/,
-    loader: 'babel-loader',
-  },
-]
+const rules = require('./rules')
 
 module.exports = {
   mode: 'production',

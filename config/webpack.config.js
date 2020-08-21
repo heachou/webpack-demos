@@ -1,19 +1,12 @@
 const path = require('path')
 const HtmlPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
-
-const rules = [
-  {
-    test: /\.(js|jsx)$/,
-    exclude: /node_modules/,
-    loader: 'babel-loader',
-  },
-]
+const rules = require('./rules')
 
 module.exports = {
   mode: 'development',
   entry: {
-    index: path.resolve(__dirname, '../src/index.js'),
+    index: path.resolve(__dirname, '../src/index.tsx'),
   },
   output: {
     filename: 'bundle.js',
@@ -22,13 +15,16 @@ module.exports = {
   module: {
     rules,
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
   devServer: {
     hot: true,
     host: 'localhost',
-    port: 5000,
+    port: 8000,
     compress: true,
     clientLogLevel: 'silent',
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -37,4 +33,5 @@ module.exports = {
       template: path.join(__dirname, '../index.html'),
     }),
   ],
+  devtool: 'inline-source-map'
 }
